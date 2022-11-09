@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../hooks';
 import ProductReview from '../ProductReview/ProductReview';
 
 const Servicedetails = () => {
+    useTitle("Service Details")
     const service = useLoaderData()
     const [reviews, setReviews] = useState([])
     const { user } = useContext(AuthContext)
@@ -105,13 +107,13 @@ const Servicedetails = () => {
                                         <label className="label">
                                             <span className="label-text">Your Name</span>
                                         </label>
-                                        <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
+                                        <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required defaultValue={user.displayName} />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Your Photo Url</span>
                                         </label>
-                                        <input type="text" name='img' placeholder="Photo Url" className="input input-bordered" />
+                                        <input type="text" name='img' placeholder="Photo Url" className="input input-bordered" defaultValue={user.photoURL} />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">

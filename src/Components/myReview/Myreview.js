@@ -1,25 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../hooks';
 import MySingleReview from './MysIngleReview/MySingleReview';
 
 const Myreview = () => {
+    useTitle("My Reviews")
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setReview] = useState()
     useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('genius-token')}`
+            }
         })
             .then(res => {
-                // if (res.status === 401 || res.status === 403) {
-                //     return logOut();
-                // }
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
                 return res.json();
             })
             .then(data => {
                 setReview(data);
                 console.log(reviews)
             })
-    }, [user?.email])
+    }, [user?.email, logOut])
 
 
     const handleDelete = id => {

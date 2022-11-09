@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks';
 import ServiceCardAll from '../ServiceCardAll/ServiceCardAll';
 
 const AllServicePage = () => {
+    useTitle("All Services")
     const allServices = useLoaderData()
     const [services, setServices] = useState(allServices)
 

@@ -40,7 +40,7 @@ const ProductReview = ({ review }) => {
                     </div>
                     <div className="flex flex-col justify-start items-start space-y-2">
                         <p className="text-base font-medium leading-none text-gray-800 dark:text-white">{name}</p>
-                        <p className="text-sm leading-none text-gray-600 dark:text-white">23 June 2021</p>
+                        <p className="text-sm leading-none text-gray-600 dark:text-white">14 Nov 2022</p>
                     </div>
                 </div>
             </div>

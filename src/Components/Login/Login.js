@@ -4,8 +4,10 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../hooks';
 
 const Login = () => {
+    useTitle("Login")
     const [error, setError] = useState("")
     const { login, setLoading } = useContext(AuthContext)
 
@@ -29,6 +31,26 @@ const Login = () => {
                 navigate(from, { replace: true })
                 setLoading(false)
                 toast.success("Seccessfully Logged in")
+
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        // local storage is the easiest but not the best place to store jwt token
+                        localStorage.setItem('genius-token', data.token);
+                        navigate(from, { replace: true });
+                    });
             })
             .catch(error => {
                 console.error(error)
