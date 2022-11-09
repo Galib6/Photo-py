@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../hooks';
+import toast from 'react-hot-toast';
 
 const SignUP = () => {
     useTitle("Sign Up")
-    const { setUser, setLoadding, createUser, updateUserProfile, signInwithGoolge } = useContext(AuthContext)
+    const { setUser, setLoading, createUser, updateUserProfile, signInwithGoolge } = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
 
 
@@ -17,10 +18,32 @@ const SignUP = () => {
     const handleGoogleSignIn = () => {
         signInwithGoolge(provider)
             .then(res => {
-                setLoadding(true)
+                setLoading(true)
                 const user = res.user;
                 setUser(user)
-                alert("Seccessfully Sign up")
+                toast.success("Seccessfully Sign up")
+
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser)
+                // get jwt token
+                fetch('https://assignment-11-server-rust.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        // local storage is the easiest but not the best place to store jwt token
+                        localStorage.setItem('genius-token', data.token);
+                        setLoading(false)
+                    });
+
             })
             .catch(err => {
                 console.error(err)

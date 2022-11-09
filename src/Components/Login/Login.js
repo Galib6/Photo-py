@@ -9,7 +9,7 @@ import useTitle from '../hooks';
 const Login = () => {
     useTitle("Login")
     const [error, setError] = useState("")
-    const { login, setLoading } = useContext(AuthContext)
+    const { login, setLoading, setUser } = useContext(AuthContext)
 
     const Location = useLocation()
     const navigate = useNavigate()
@@ -24,7 +24,8 @@ const Login = () => {
         login(email, password)
             .then(res => {
                 const user = res.user;
-                console.log(user);
+                // console.log(user);
+                setUser(user)
                 setError("")
                 form.reset()
                 // toast('Here is your toast.');
@@ -36,7 +37,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://assignment-11-server-rust.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

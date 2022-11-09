@@ -9,7 +9,7 @@ const MySingleReview = ({ review, handleDelete }) => {
     const handleUpdateUser = (event) => {
         event.preventDefault();
         // console.log(user)
-        fetch(`http://localhost:5000/myreviews/${_id}`, {
+        fetch(`https://assignment-11-server-rust.vercel.app/myreviews/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

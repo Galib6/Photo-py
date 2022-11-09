@@ -1,5 +1,6 @@
 import React from 'react';
-import { HiPencil } from "react-icons/hi";
+import Ratings from 'react-ratings-declarative/build/ratings';
+
 
 //_______________________Modal____________________
 < div >
@@ -8,28 +9,31 @@ import { HiPencil } from "react-icons/hi";
 //_______________________Modal end ____________________
 
 const ProductReview = ({ review }) => {
-    const { name, img, details } = review
+    const { name, img, details, rating } = review
+    const frating = parseInt(rating)
 
 
 
 
     return (
         <div className=' mt-1 bg-slate-100 p-10 rounded-xl'>
-            <div className='flex justify-between'>
-                <div>
+            <div className='grid grid-cols-3'>
+                <div className='col-span-2'>
                     <h1 className='text-sm font-semibold'>
                         {details}
                     </h1>
                 </div>
-                <div className="cursor-pointer mt-2 md:mt-0">
-                    <div className="rating">
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" defaultChecked />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                    </div>
-                </div>
+                <h2 className='text-center'><Ratings
+                    rating={frating}
+                    widgetDimensions="20px"
+                    widgetSpacings="3px"
+                >
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget />
+                </Ratings></h2>
             </div>
             <div className='flex justify-between items-center'>
                 <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">

@@ -54,7 +54,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         setLoading,
         signInwithGoolge,
-        updateUserProfile
+        updateUserProfile,
+        setUser
     }
 
     return (

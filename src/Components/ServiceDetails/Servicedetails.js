@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import Ratings from 'react-ratings-declarative/build/ratings';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../hooks';
@@ -12,13 +13,14 @@ const Servicedetails = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${service.service_id}`)
+        fetch(`https://assignment-11-server-rust.vercel.app/reviews/${service.service_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
 
     const { img, title, Rating, description, service_id } = service
-    console.log(reviews)
+    const rating = parseInt(Rating)
+    console.log(rating)
 
     const handleAddNewReview = (event) => {
         event.preventDefault();
@@ -38,7 +40,7 @@ const Servicedetails = () => {
             details: sreview
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://assignment-11-server-rust.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -70,14 +72,18 @@ const Servicedetails = () => {
                 <p className="py-6 text-2xl text-center mx-28">{description}</p>
                 <h2 className='mx-28 text-center'>
                     Avg Rating:
-                    <div className="rating">
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                        <input type="radio" name="rating-1" className="mask mask-star" defaultChecked />
-                        <input type="radio" name="rating-1" className="mask mask-star" />
-                    </div>
                 </h2>
+                <h2 className='text-center'><Ratings
+                    rating={rating}
+                    widgetDimensions="30px"
+                    widgetSpacings="5px"
+                >
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                    <Ratings.Widget widgetRatedColor="gold" />
+                </Ratings></h2>
             </div>
             <div>
                 <div>
