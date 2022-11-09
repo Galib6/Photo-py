@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import ProductReview from '../ProductReview/ProductReview';
@@ -14,6 +15,7 @@ const Servicedetails = () => {
             .then(data => setReviews(data))
     }, [])
 
+    const { img, title, Rating, description, service_id } = service
     console.log(reviews)
 
     const handleAddNewReview = (event) => {
@@ -27,8 +29,9 @@ const Servicedetails = () => {
         const review = {
             serviceId: service_id,
             name: name,
-            sort: "added",
+            email: user.email,
             img: img,
+            title: title,
             rating: rating,
             details: sreview
         }
@@ -44,7 +47,7 @@ const Servicedetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review placed successfully')
+                    toast.success('Review Successfully Added')
                     form.reset();
                     setReviews([review, ...reviews])
 
@@ -53,7 +56,7 @@ const Servicedetails = () => {
             .catch(er => console.error(er));
     }
 
-    const { img, title, Rating, description, service_id } = service
+
     // console.log(service)
     return (
         <div >

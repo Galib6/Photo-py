@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PhotoProvider } from 'react-photo-view';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
       >
         <App />
+        <Toaster />
       </PhotoProvider>
     </AuthProvider>
   </React.StrictMode >

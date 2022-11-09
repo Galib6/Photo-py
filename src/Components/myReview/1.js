@@ -44,47 +44,45 @@ const Myreview = () => {
 
     return (
         <div className='min-h-screen mt-10'>
+            reviews ?
+            <>
+                <div className="overflow-x-auto">
+                    <table className="table w-full">
 
-            {reviews?.length ?
-                <>
-                    <div className="overflow-x-auto">
-                        <table className="table w-full">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Service Name</th>
+                                <th>Review</th>
+                                <th>Review Rating</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                reviews?.map(review => <MySingleReview
+                                    key={review._id}
+                                    review={review}
+                                    handleDelete={handleDelete}
+                                ></MySingleReview>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </>
 
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Service Name</th>
-                                    <th>Review</th>
-                                    <th>Review Rating</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    reviews?.map(review => <MySingleReview
-                                        key={review._id}
-                                        review={review}
-                                        handleDelete={handleDelete}
-                                    ></MySingleReview>)
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </>
+            :
+            <>
+                <div className="hero min-h-screen">
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold">No review were added</h1>
 
-                :
-                <>
-                    <div className="hero min-h-screen">
-                        <div className="hero-overlay bg-opacity-60"></div>
-                        <div className="hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">No review were added</h1>
-
-                            </div>
                         </div>
                     </div>
-                </>
-            }
+                </div>
+            </>
         </div >
     );
 };

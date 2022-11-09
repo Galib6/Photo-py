@@ -49,13 +49,14 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/myreview">My Review</Link></li>
+                    <li><Link to="/addnewservice">Add A Service</Link></li>
+
                     {/* <li><Link to="/Blog">Blog</Link></li> */}
                     <>
                         {
                             user?.uid ?
                                 <>
-
+                                    <li><Link to="/myreview">My Review</Link></li>
                                 </>
                                 :
                                 <>
@@ -91,7 +92,9 @@ const Header = () => {
                         {
                             user?.uid ?
                                 <>
-                                    <ul className="menu menu-horizontal p-0 "><li> <span className=' hidden lg:block' tabIndex={0}> {user?.displayName}</span></li></ul>
+                                    <ul className="menu menu-horizontal p-0 "><li> <span className=' hidden lg:block' tabIndex={0}> {user?.displayName}</span></li>
+                                        <li><a onClick={handleLogOut}>Logout</a></li>
+                                    </ul>
                                 </>
                                 :
                                 <>
