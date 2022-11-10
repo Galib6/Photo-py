@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Components/Loading/Loading';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 
 
@@ -9,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <button className="btn loading h-80 w-80">loading</button>
+        return <Loading></Loading>
     }
 
     if (user) {

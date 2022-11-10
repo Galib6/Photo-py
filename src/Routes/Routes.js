@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/services",
-                loader: () => fetch("https://assignment-11-server-rust.vercel.app/services"),
+                // loader: () => fetch("https://assignment-11-server-rust.vercel.app/services"),
                 element: <AllServicePage></AllServicePage>
             },
             {
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addnewservice",
+                element: <PrivateRoute><AddAService></AddAService></PrivateRoute>
+            },
+            {
+                path: "/blog",
                 element: <AddAService></AddAService>
             },
 

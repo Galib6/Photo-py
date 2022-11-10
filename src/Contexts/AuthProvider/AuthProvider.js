@@ -10,6 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [sloading, setsLoading] = useState(true);
 
     const signInwithGoolge = (provider) => {
         return signInWithPopup(auth, provider)
@@ -55,7 +56,9 @@ const AuthProvider = ({ children }) => {
         setLoading,
         signInwithGoolge,
         updateUserProfile,
-        setUser
+        setUser,
+        sloading,
+        setsLoading
     }
 
     return (

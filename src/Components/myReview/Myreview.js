@@ -48,7 +48,7 @@ const Myreview = () => {
 
 
     return (
-        <div className='min-h-screen mt-10 mx-20'>
+        <div className='min-h-screen mt-10 md:mx-20'>
 
             {reviews?.length ?
                 <>

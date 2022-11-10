@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Ratings from 'react-ratings-declarative/build/ratings';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../hooks';
 import ProductReview from '../ProductReview/ProductReview';
@@ -11,6 +11,7 @@ const Servicedetails = () => {
     const service = useLoaderData()
     const [reviews, setReviews] = useState([])
     const { user } = useContext(AuthContext)
+    const location = useLocation();
 
     useEffect(() => {
         fetch(`https://assignment-11-server-rust.vercel.app/reviews/${service.service_id}`)
@@ -63,7 +64,7 @@ const Servicedetails = () => {
 
     // console.log(service)
     return (
-        <div className='mx-20' >
+        <div className='md:mx-20' >
             <div>
                 <div className='flex justify-center mt-8'>
                     <img className='max-w-screen-md' src={img} alt="" />
@@ -142,7 +143,15 @@ const Servicedetails = () => {
                     </>
                     :
                     <>
-
+                        <div className="hero bg-base-100 my-20" >
+                            <div className="hero-content text-center">
+                                <div className="max-w-md">
+                                    <h1 className="text-5xl font-bold">Hi</h1>
+                                    <p className="py-3 text-3xl">Want to review our service?</p>
+                                    <button className="btn btn-primary"><Link to="/login" state={{ from: location }} replace>Please Login</Link></button>
+                                </div>
+                            </div>
+                        </div>
                     </>
             }
         </div>

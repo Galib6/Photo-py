@@ -7,7 +7,9 @@ const ServiceCardHome = ({ Service }) => {
 
         <div className="card  bg-base-100 shadow-xl">
             <figure>
-                <img src={Service.img} alt="Shoes" />
+                <PhotoView src={Service.img}>
+                    <img src={Service.img} alt="" />
+                </PhotoView>
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{Service.title}</h2>
