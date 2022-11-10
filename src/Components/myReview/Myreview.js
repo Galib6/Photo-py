@@ -22,7 +22,7 @@ const Myreview = () => {
             })
             .then(data => {
                 setReview(data);
-                console.log(reviews)
+                // console.log(reviews)
             })
     }, [user?.email, logOut])
 

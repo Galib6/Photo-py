@@ -8,7 +8,7 @@ const Services = () => {
     useTitle("Home")
 
     const Services = useLoaderData()
-    console.log(Services)
+    // console.log(Services)
     return (
         <div className='mx-20'>
             <div>

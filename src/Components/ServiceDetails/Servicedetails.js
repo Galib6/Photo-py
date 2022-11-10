@@ -21,7 +21,7 @@ const Servicedetails = () => {
 
     const { img, title, Rating, description, service_id } = service
     const rating = parseInt(Rating)
-    console.log(rating)
+    // console.log(rating)
 
     const handleAddNewReview = (event) => {
         event.preventDefault();
