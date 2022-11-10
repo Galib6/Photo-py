@@ -63,7 +63,7 @@ const Servicedetails = () => {
 
     // console.log(service)
     return (
-        <div >
+        <div className='mx-20' >
             <div>
                 <div className='flex justify-center mt-8'>
                     <img className='max-w-screen-md' src={img} alt="" />
@@ -131,7 +131,7 @@ const Servicedetails = () => {
                                         <label className="label">
                                             <span className="label-text">Your rating to our service</span>
                                         </label>
-                                        <input type="text" name='rating' placeholder="rating" className="input input-bordered" required />
+                                        <input type="number" name='rating' placeholder="rating" className="input input-bordered" required />
                                     </div>
                                 </div>
                                 <div className='flex my-10'>

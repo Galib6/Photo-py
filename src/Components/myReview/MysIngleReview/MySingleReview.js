@@ -75,7 +75,7 @@ const MySingleReview = ({ review, handleDelete }) => {
                                         <label className="label">
                                             <span className="label-text">Your Rating out of 5</span>
                                         </label>
-                                        <input type="text" onChange={handleUpdateReview} name='rating' placeholder="rating" className="input input-bordered" defaultValue={rating} required />
+                                        <input type="number" onChange={handleUpdateReview} name='rating' placeholder="rating" className="input input-bordered" defaultValue={rating} required />
                                     </div>
                                 </div>
                                 <div className='flex justify-center'>
