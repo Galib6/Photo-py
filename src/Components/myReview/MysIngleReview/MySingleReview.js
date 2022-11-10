@@ -42,8 +42,7 @@ const MySingleReview = ({ review, handleDelete }) => {
             <td>{details.slice(0, 50)}</td>
             <td>{rating}</td>
             <td><button className="btn btn-outline btn-ghost btn-sm" onClick={() => handleDelete(_id)}>Delete</button> <label htmlFor="my-modal" className="btn btn-outline btn-ghost btn-sm">Edit</label></td>
-            {/* ____________________________________________________________ */}
-            {/* modal  */}
+            {/* ________________________Modal____________________________________ */}
             <div>
                 <input type="checkbox" id="my-modal" className="modal-toggle" />
                 <div className="modal">
