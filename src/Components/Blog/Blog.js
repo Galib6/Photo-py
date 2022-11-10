@@ -1,80 +1,63 @@
 import React from 'react';
 
-const blog = () => {
+const Blog = () => {
     return (
         <div>
-            <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-                    <div class="flex flex-col mb-16 sm:text-center">
-                        <a href="/" class="mb-6 sm:mx-auto">
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
-                                <svg
-                                    class="w-10 h-10 text-deep-purple-accent-400"
-                                    stroke="currentColor"
-                                    viewBox="0 0 52 52"
-                                >
-                                    <polygon
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        fill="none"
-                                        points="29 13 14 29 25 29 23 39 38 23 27 23"
-                                    />
-                                </svg>
-                            </div>
-                        </a>
-                        <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-                            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                                <span class="relative inline-block">
-                                    <svg
-                                        viewBox="0 0 52 24"
-                                        fill="currentColor"
-                                        class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-                                    >
-                                        <defs>
-                                            <pattern
-                                                id="ec5d8ef5-b853-4714-b94f-df28ec98eeb7"
-                                                x="0"
-                                                y="0"
-                                                width=".135"
-                                                height=".30"
-                                            >
-                                                <circle cx="1" cy="1" r=".7" />
-                                            </pattern>
-                                        </defs>
-                                        <rect
-                                            fill="url(#ec5d8ef5-b853-4714-b94f-df28ec98eeb7)"
-                                            width="52"
-                                            height="24"
-                                        />
-                                    </svg>
-                                    <span class="relative">The</span>
-                                </span>{' '}
-                                quick, brown fox jumps over a lazy dog
+            <div>
+                <div>
+                    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                        <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-black-600 sm:text-4xl md:mx-auto">
+                                Our Famous Blogs
                             </h2>
-                            <p class="text-base text-gray-700 md:text-lg">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque rem aperiam, eaque ipsa quae.
-                            </p>
                         </div>
-                    </div>
-                    <div class="space-y-4">
-                        <Item title="The quick, brown fox jumps over a lazy dog?">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque rem aperiam, eaque ipsa quae.
-                        </Item>
-                        <Item title="The first mate and his Skipper too will do?">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque rem aperiam, eaque ipsa quae.
-                        </Item>
-                        <Item title="Is the Space Pope reptilian!?">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque rem aperiam, eaque ipsa quae.
-                        </Item>
-                        <Item title="How much money you got on you?">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque rem aperiam, eaque ipsa quae.
-                        </Item>
+                        <div className="grid gap-8 row-gap-10 lg:grid-cols-2">
+                            <div className="max-w-md sm:mx-auto sm:text-center">
+
+                                <h6 className="mb-3 text-xl text-black-600 font-bold leading-5">Ques: Difference between SQL and NoSQL</h6>
+                                <p className="mb-3 text-m text-black-600">
+                                    Ans: SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.
+                                </p>
+
+                            </div>
+                            <div className="max-w-md sm:mx-auto sm:text-center">
+
+                                <h6 className="mb-3 text-xl text-black-600 font-bold leading-5">Ques: What is JWT, and how does it work?
+                                </h6>
+                                <p className="mb-3 text-m text-black-600">
+                                    Ans:JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.
+                                    It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP). So the integrity and authenticity of the token can be verified by other parties involved.
+                                    The purpose of using JWT is not to hide data but to ensure the authenticity of the data. JWT is signed and encoded, not encrypted.
+                                </p>
+
+                            </div>
+                            <div className="max-w-md sm:mx-auto sm:text-center">
+
+                                <h6 className="mb-3 text-xl text-black-600 font-bold leading-5">Ques:What is the difference between javascript and NodeJS?
+                                </h6>
+                                <p className="mb-3 text-m text-black-600">
+
+                                    Ans: 1. NodeJS :
+                                    NodeJS is a cross-platform and opensource Javascript runtime environment that allows the javascript to be run on the server-side. Nodejs allows Javascript code to run outside the browser. Nodejs comes with a lot of modules and mostly used in web development.
+
+                                    2. JavaScript :
+                                    Javascript is a Scripting language. It is mostly abbreviated as JS. It can be said that Javascript is the updated version of the ECMA script. Javascript is a high-level programming language that uses the concept of Oops but it is based on prototype inheritance.
+                                </p>
+                            </div>
+                            <div className="max-w-md sm:mx-auto sm:text-center">
+
+                                <h6 className="mb-3 text-xl text-black-600 font-bold leading-5">
+                                    Ques:How does NodeJS handle multiple requests at the same time?
+
+
+                                </h6>
+                                <p className="mb-3 text-sm text-black-600">
+                                    Ans: NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue.
+
+                                    If NodeJS can process the request without I/O blocking then the event loop would itself process the request and sends the response back to the client by itself. But, it is possible to process multiple requests parallelly using the NodeJS cluster module or worker_threads module.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,4 +65,4 @@ const blog = () => {
     );
 };
 
-export default blog;
+export default Blog;

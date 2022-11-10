@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 import AddAService from "../Components/AddAService/AddAService"
+import Blog from "../Components/Blog/Blog"
 import ErrorPage from "../Components/ErrorPage"
 import Login from "../Components/Login/Login"
 import Myreview from "../Components/myReview/Myreview"
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/blog",
-                element: <AddAService></AddAService>
+                element: <Blog></Blog>
             },
 
         ]
