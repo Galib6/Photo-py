@@ -36,7 +36,6 @@ const Myreview = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
                         const remaining = reviews.filter(odr => odr._id !== id);
                         setReview(remaining);
                         toast.success("Successfully Deleted")
