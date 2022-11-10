@@ -45,7 +45,7 @@ const Header = () => {
                         </>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-2xl"><FaCameraRetro /><span> Asadullah Al Galib</span></Link>
+                <Link to="/" className="btn btn-ghost normal-case text-2xl"><FaCameraRetro /><span className='ml-1'>Asadullah Al Galib</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal p-0">
