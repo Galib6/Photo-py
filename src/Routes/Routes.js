@@ -25,7 +25,6 @@ const router = createBrowserRouter([
             },
             {
                 path: "/services",
-                // loader: () => fetch("https://assignment-11-server-rust.vercel.app/services"),
                 element: <AllServicePage></AllServicePage>
             },
             {
