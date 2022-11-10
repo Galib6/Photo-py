@@ -26,7 +26,6 @@ const MySingleReview = ({ review, handleDelete }) => {
             })
     }
 
-
     const handleUpdateReview = (event) => {
         event.preventDefault();
         const value = event.target.value;
