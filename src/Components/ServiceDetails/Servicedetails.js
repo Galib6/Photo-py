@@ -64,13 +64,13 @@ const Servicedetails = () => {
 
     // console.log(service)
     return (
-        <div className='md:mx-20' >
+        <div className='md:mx-20 sm:mx-0' >
             <div>
                 <div className='flex justify-center mt-8'>
-                    <img className='max-w-screen-md' src={img} alt="" />
+                    <img className='md:h-5/6 sm:h-100 object-contain' src={img} alt="" />
                 </div>
                 <h1 className="text-5xl font-bold text-center">{title}</h1>
-                <p className="py-6 text-2xl text-center mx-28">{description}</p>
+                <p className="py-6 text-2xl text-center sm:mx-0 lg:mx-28">{description}</p>
                 <h2 className='mx-28 text-center'>
                     Avg Rating:
                 </h2>
@@ -93,7 +93,7 @@ const Servicedetails = () => {
                         <h1 className='text-2xl font-bold text-center mt-2'>4 out of 5 Based On customer review</h1>
                     </div>
                 </div>
-                <div className='m-10 grid grid-cols-2 gap-4'>
+                <div className='mg:m-10 sm:m-0  grid md:grid-cols-2 sm:grid-cols-1 gap-4'>
                     {
                         reviews.map(review => <ProductReview
                             key={review._id}

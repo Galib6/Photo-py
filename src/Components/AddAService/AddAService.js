@@ -44,7 +44,7 @@ const AddAService = () => {
 
     }
     return (
-        <div className='md:mx-20'>
+        <div className='md:mx-20 min-h-screen mt-20'>
             <div>
                 <form onSubmit={handleAddNewService}>
                     <h2 className='text-4xl text-center mb-5'> Add a new service</h2>

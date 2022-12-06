@@ -17,7 +17,7 @@ const ProductReview = ({ review }) => {
 
     return (
         <div className=' mt-1 bg-slate-100 p-10 rounded-xl'>
-            <div className='grid grid-cols-3'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-1 '>
                 <div className='col-span-2'>
                     <h1 className='text-sm font-semibold'>
                         {details}
@@ -36,7 +36,7 @@ const ProductReview = ({ review }) => {
                 </Ratings></h2>
             </div>
             <div className='flex justify-between items-center'>
-                <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">
+                <div className="mt-6 flex justify-start items-center md:flex-col  lg:flex-row space-x-2.5">
                     <div className='avatar'>
                         <div className='w-10 rounded-full'>
                             <img src={img} alt="girl-avatar" />

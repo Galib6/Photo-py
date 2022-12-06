@@ -6,9 +6,10 @@ import MySingleReview from './MysIngleReview/MySingleReview';
 
 const Myreview = () => {
     useTitle("My Reviews")
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, sloading, setsLoading } = useContext(AuthContext);
     const [reviews, setReview] = useState()
     useEffect(() => {
+        setsLoading(false)
         fetch(`https://assignment-11-server-rust.vercel.app/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('genius-token')}`
@@ -23,6 +24,7 @@ const Myreview = () => {
             .then(data => {
                 setReview(data);
                 // console.log(reviews)
+                setsLoading(false)
             })
     }, [user?.email, logOut])
 
@@ -45,20 +47,19 @@ const Myreview = () => {
     }
 
     return (
-        <div className='min-h-screen mt-10 md:mx-20'>
+        <div className='min-h-screen mt-10 sm:mx-0 md:mx-20'>
 
             {reviews?.length ?
                 <>
                     <div className="overflow-x-auto">
                         <table className="table w-full">
-
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Service Name</th>
                                     <th>Review</th>
                                     <th>Review Rating</th>
-                                    <th></th>
+                                    <th>Edit/Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,7 +74,6 @@ const Myreview = () => {
                         </table>
                     </div>
                 </>
-
                 :
                 <>
                     <div className="hero min-h-screen">
@@ -92,3 +92,5 @@ const Myreview = () => {
 };
 
 export default Myreview;
+
+

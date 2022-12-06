@@ -21,7 +21,7 @@ const AllServicePage = () => {
     }, [])
 
     return (
-        <div className='md:mx-20'>
+        <div className='md:mx-20 sm:mx-0'>
             {
                 sloading ?
                     <>

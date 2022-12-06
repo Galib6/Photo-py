@@ -10,7 +10,7 @@ const Services = () => {
     const Services = useLoaderData()
     // console.log(Services)
     return (
-        <div className='mx-20'>
+        <div className='sm:mx-0 md:mx-20'>
             <div>
                 <Home></Home>
             </div>

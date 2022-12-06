@@ -28,8 +28,6 @@ const Login = () => {
                 setUser(user)
                 setError("")
                 form.reset()
-                // toast('Here is your toast.');
-                navigate(from, { replace: true })
                 setLoading(false)
                 toast.success("Seccessfully Logged in")
 
